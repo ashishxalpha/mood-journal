@@ -167,7 +167,7 @@ const NotificationsModal: React.FC = () => {
             />
             <Text style={styles.emptyText}>No notifications yet</Text>
             <Text style={styles.emptySubtext}>
-              You&aposll see updates and reminders here
+              You&apos;ll see updates and reminders here
             </Text>
           </View>
         ) : (

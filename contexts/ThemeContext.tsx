@@ -67,6 +67,35 @@ export interface ColorScheme {
   textSecondary: string;
   textDisabled: string;
   textInverse: string;
+  
+  // Overlay colors
+  overlay: string;
+  shadowColor: string;
+  
+  // Border colors
+  border: string;
+  borderLight: string;
+  borderDark: string;
+  
+  // Input colors
+  inputBackground: string;
+  inputBorder: string;
+  inputPlaceholder: string;
+  
+  // Button colors
+  buttonPrimary: string;
+  buttonSecondary: string;
+  buttonDisabled: string;
+  
+  // Card colors
+  cardShadow: string;
+  cardBorder: string;
+  
+  // Status colors
+  successLight: string;
+  warningLight: string;
+  errorLight: string;
+  infoLight: string;
 }
 
 // Theme definitions
@@ -113,6 +142,23 @@ export const THEMES: Record<ThemeName, ColorScheme> = {
     textSecondary: '#6C757D',
     textDisabled: '#ADB5BD',
     textInverse: '#ffffff',
+    overlay: 'rgba(0, 0, 0, 0.5)',
+    shadowColor: '#000000',
+    border: '#E2E8F0',
+    borderLight: '#F1F5F9',
+    borderDark: '#CBD5E1',
+    inputBackground: '#ffffff',
+    inputBorder: '#E2E8F0',
+    inputPlaceholder: '#94a3b8',
+    buttonPrimary: '#4ECDC4',
+    buttonSecondary: '#F1F5F9',
+    buttonDisabled: '#ADB5BD',
+    cardShadow: '#000000',
+    cardBorder: '#E2E8F0',
+    successLight: '#D1FAE5',
+    warningLight: '#FED7AA',
+    errorLight: '#FEE2E2',
+    infoLight: '#E0F2F1',
   },
   blue: {
     primary: '#5B9BD5',
@@ -156,6 +202,23 @@ export const THEMES: Record<ThemeName, ColorScheme> = {
     textSecondary: '#6C757D',
     textDisabled: '#ADB5BD',
     textInverse: '#ffffff',
+    overlay: 'rgba(0, 0, 0, 0.5)',
+    shadowColor: '#000000',
+    border: '#E2E8F0',
+    borderLight: '#F1F5F9',
+    borderDark: '#CBD5E1',
+    inputBackground: '#ffffff',
+    inputBorder: '#E2E8F0',
+    inputPlaceholder: '#94a3b8',
+    buttonPrimary: '#5B9BD5',
+    buttonSecondary: '#F1F5F9',
+    buttonDisabled: '#ADB5BD',
+    cardShadow: '#000000',
+    cardBorder: '#E2E8F0',
+    successLight: '#D1FAE5',
+    warningLight: '#FED7AA',
+    errorLight: '#FEE2E2',
+    infoLight: '#DBEAFE',
   },
   purple: {
     primary: '#A78BFA',
@@ -199,6 +262,23 @@ export const THEMES: Record<ThemeName, ColorScheme> = {
     textSecondary: '#6C757D',
     textDisabled: '#ADB5BD',
     textInverse: '#ffffff',
+    overlay: 'rgba(0, 0, 0, 0.5)',
+    shadowColor: '#000000',
+    border: '#E2E8F0',
+    borderLight: '#F1F5F9',
+    borderDark: '#CBD5E1',
+    inputBackground: '#ffffff',
+    inputBorder: '#E2E8F0',
+    inputPlaceholder: '#94a3b8',
+    buttonPrimary: '#A78BFA',
+    buttonSecondary: '#F1F5F9',
+    buttonDisabled: '#ADB5BD',
+    cardShadow: '#000000',
+    cardBorder: '#E2E8F0',
+    successLight: '#D1FAE5',
+    warningLight: '#FED7AA',
+    errorLight: '#FEE2E2',
+    infoLight: '#EDE9FE',
   },
   green: {
     primary: '#10B981',
@@ -242,6 +322,23 @@ export const THEMES: Record<ThemeName, ColorScheme> = {
     textSecondary: '#6C757D',
     textDisabled: '#ADB5BD',
     textInverse: '#ffffff',
+    overlay: 'rgba(0, 0, 0, 0.5)',
+    shadowColor: '#000000',
+    border: '#E2E8F0',
+    borderLight: '#F1F5F9',
+    borderDark: '#CBD5E1',
+    inputBackground: '#ffffff',
+    inputBorder: '#E2E8F0',
+    inputPlaceholder: '#94a3b8',
+    buttonPrimary: '#10B981',
+    buttonSecondary: '#F1F5F9',
+    buttonDisabled: '#ADB5BD',
+    cardShadow: '#000000',
+    cardBorder: '#E2E8F0',
+    successLight: '#D1FAE5',
+    warningLight: '#FED7AA',
+    errorLight: '#FEE2E2',
+    infoLight: '#D1FAE5',
   },
   sunset: {
     primary: '#F97316',
@@ -285,6 +382,23 @@ export const THEMES: Record<ThemeName, ColorScheme> = {
     textSecondary: '#6C757D',
     textDisabled: '#ADB5BD',
     textInverse: '#ffffff',
+    overlay: 'rgba(0, 0, 0, 0.5)',
+    shadowColor: '#000000',
+    border: '#E2E8F0',
+    borderLight: '#F1F5F9',
+    borderDark: '#CBD5E1',
+    inputBackground: '#ffffff',
+    inputBorder: '#E2E8F0',
+    inputPlaceholder: '#94a3b8',
+    buttonPrimary: '#F97316',
+    buttonSecondary: '#F1F5F9',
+    buttonDisabled: '#ADB5BD',
+    cardShadow: '#000000',
+    cardBorder: '#E2E8F0',
+    successLight: '#D1FAE5',
+    warningLight: '#FED7AA',
+    errorLight: '#FEE2E2',
+    infoLight: '#FFEDD5',
   },
 };
 
