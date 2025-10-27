@@ -1,24 +1,45 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+/**
+ * Root Layout Component
+ * Sets up the navigation structure and theme for the app
+ */
+
+import { useEffect } from 'react';
 import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import { PaperProvider } from 'react-native-paper';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useAuthStore } from '../store/useAuthStore';
+import { ThemeProvider } from '../contexts/ThemeContext';
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
+  const { checkAuth } = useAuthStore();
+
+  // Check authentication on mount
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <PaperProvider>
+          <Stack
+            screenOptions={{
+              headerShown: false,
+              contentStyle: {
+                backgroundColor: '#FAFAFA',
+              },
+            }}
+          >
+            <Stack.Screen name="(auth)" />
+            <Stack.Screen name="(tabs)" />
+            <Stack.Screen name="chatbot" options={{ presentation: 'modal' }} />
+            <Stack.Screen name="settings" options={{ presentation: 'modal' }} />
+            <Stack.Screen name="notifications" options={{ presentation: 'modal' }} />
+            <Stack.Screen name="about" options={{ presentation: 'modal' }} />
+            <Stack.Screen name="journal/[id]" options={{ presentation: 'card' }} />
+          </Stack>
+        </PaperProvider>
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
