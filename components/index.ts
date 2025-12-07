@@ -9,3 +9,4 @@ export { QuoteCard } from './QuoteCard';
 export { JournalModal } from './JournalModal';
 export { DateActionModal } from './DateActionModal';
 export { VoiceRecorder } from './VoiceRecorder';
+export { AudioPlayer } from './AudioPlayer';

@@ -18,6 +18,7 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { JournalEntry, MoodLevel } from '../types';
 import { VoiceRecorder } from './VoiceRecorder';
+import { AudioPlayer } from './AudioPlayer';
 import * as api from '../services/api';
 
 interface JournalModalProps {
@@ -73,6 +74,16 @@ export const JournalModal: React.FC<JournalModalProps> = ({
       setContent(entry?.content || '');
       setSelectedMood(entry?.mood?.mood || null);
       setErrors({ title: '', content: '', mood: '' });
+      
+      // Load existing audio attachment if present
+      if (entry?.audioUri && entry?.audioDuration) {
+        setAudioAttachment({
+          uri: entry.audioUri,
+          duration: entry.audioDuration,
+        });
+      } else {
+        setAudioAttachment(null);
+      }
     }
   }, [visible, entry]);
 
@@ -133,6 +144,8 @@ export const JournalModal: React.FC<JournalModalProps> = ({
             }
           : undefined,
         tags: [],
+        audioUri: audioAttachment?.uri,
+        audioDuration: audioAttachment?.duration,
       };
 
       if (isAddMode) {
@@ -156,6 +169,7 @@ export const JournalModal: React.FC<JournalModalProps> = ({
     setContent('');
     setSelectedMood(null);
     setErrors({ title: '', content: '', mood: '' });
+    setAudioAttachment(null);
     onClose();
   };
 
@@ -353,6 +367,17 @@ export const JournalModal: React.FC<JournalModalProps> = ({
                   </View>
                 ))}
               </View>
+            </View>
+          )}
+
+          {/* Audio Player (if in view mode and audio exists) */}
+          {isViewMode && entry?.audioUri && entry?.audioDuration && (
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Voice Note</Text>
+              <AudioPlayer
+                audioUri={entry.audioUri}
+                duration={entry.audioDuration}
+              />
             </View>
           )}
         </ScrollView>

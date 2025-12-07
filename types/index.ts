@@ -30,6 +30,8 @@ export interface JournalEntry {
   content: string;
   mood?: MoodEntry;
   tags?: string[];
+  audioUri?: string; // Audio recording file path
+  audioDuration?: number; // Duration in seconds
   timestamp: number;
   createdAt: number;
   updatedAt: number;
